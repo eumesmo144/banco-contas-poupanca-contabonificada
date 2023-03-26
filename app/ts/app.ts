@@ -1,5 +1,6 @@
 let contaController = new ContaController();
-
+let clienteController = new ClienteController();
+clienteController.listar();
 contaController.listar();
 
 const c1 = new Conta('1', 100);

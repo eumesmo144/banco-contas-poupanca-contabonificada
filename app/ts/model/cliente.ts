@@ -11,19 +11,19 @@ class Cliente {
     get nome(): string{
         return this._nome;
     }
-    set nome(nome){
+    set nome(nome: string){
         this._nome = nome;
     }
     get cpf(): string{
         return this._cpf;
     }
-    set cpf(cpf){
+    set cpf(cpf: string){
         this._cpf = cpf;
     }
     get conta(): Conta{
         return this._conta;
     }
-    set conta(conta){
+    set conta(conta: Conta){
         this._conta = conta;
     }
     

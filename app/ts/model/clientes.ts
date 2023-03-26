@@ -9,14 +9,20 @@ class Clientes extends Cliente {
     inserir(cliente: Cliente): void {
         this.clientes.push(cliente);
     }
-    remover(t: Cliente): void {
-        const contaARemover = this.pesquisar(numero);
-        if (contaARemover) {
-            const indiceConta = this.contas.indexOf(contaARemover);
+    remover(cpf: string): void {
+        const clientepRemover = this.pesquisar(cpf);
+        if (clientepRemover) {
+            const indiceConta = this.clientes.indexOf(clientepRemover);
             if (indiceConta > -1) {
-                this.contas.splice(indiceConta, 1);
+                this.clientes.splice(indiceConta, 1);
             }
         }
     }
+    pesquisar(cpf: string): Cliente {
+        return this.clientes.find(cliente => cliente.cpf === cpf);
     }
-}
+    listar(): Array<Cliente> {
+        return this.clientes;
+    }
+
+    }
