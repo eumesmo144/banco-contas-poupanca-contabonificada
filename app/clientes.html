@@ -7,27 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="teste">
-        <fieldset style="display: inline-block;">
-            <legend style="font-size: 35px">Cadastre cliente!!!11!</legend><br> 
-            <label for="clientName">Nome: </label>  
-            <input type="text" id="clientName"><br><br> 
-            <label for="cpf">CPF:</label>  
-            <input type="text" id="cpf" placeholder="XXX.XXX.XXX-XX"><br><br> 
-            <label for="typeConta">Conta: </label>  
-            <input type="text" id="typeConta" placeholder="Tipo de conta"><br><br>
-            <input type="button" value="Cadastrar" onclick="clienteController.inserir(event)">
+    <fieldset style="display: inline-block;">
+        <legend style="font-size: 35px">Cadastre cliente UwU</legend><br> 
+        <label for="clientName">Nome: </label>  
+        <input type="text" id="clientName"><br><br> 
+        <label for="cpf">CPF:</label>  
+        <input type="text" id="cpf" placeholder="XXX.XXX.XXX-XX"><br><br> 
+        <label for="typeConta">Conta: </label>  
+        <input type="text" id="typeConta" placeholder="Tipo de conta"><br><br>
+        <button type="submit" onclick="clienteController.inserir(event)">Cadastrar</button>               
+    </fieldset><br>
 
-                 
-        </fieldset>
-    </form>
+    <fieldset style="display: inline-block;">
+        <legend style="font-size: 30px" id="mensagem">Clientes Cadastrados &#128563;</legend>
+        <p id="cliente"> Nome - CPF - Conta</p>
+    </fieldset>
+    
     <script src="js/model/cliente.js"></script>
     <script src="js/model/clientes.js"></script>
+    <script src="js/controller/cliente-controller.js"></script>
+    <script src="js/controller/conta-controller.js"></script>
     <script src="js/model/conta.js"></script>
     <script src="js/model/contas.js"></script>
     <script src="js/model/poupanca.js"></script>
     <script src="js/model/conta-bonificada.js"></script>
-    <script src="js/controller/conta-controller.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,19 +1,16 @@
 class ClienteController {
-    private _inputName: HTMLInputElement;
-    private _inputCPF:  HTMLInputElement;
-    private _inputConta: HTMLInputElement;
-    private _clientes: Clientes;
+    _inputName;
+    _inputCPF;
+    _inputConta;
+    _clientes;
      
     constructor() {
-        this._inputName =
-            <HTMLInputElement>document.querySelector("#clientName")
-        this._inputCPF =
-            <HTMLInputElement>document.querySelector("#cpf");
-        this._inputConta =
-            <HTMLInputElement>document.querySelector("#typeConta");
+        this._inputName = document.querySelector("#clientName")
+        this._inputCPF = document.querySelector("#cpf");
+        this._inputConta = document.querySelector("#typeConta");
         this._clientes = new Clientes();
     }
-    inserir(evento: Event) {
+    inserir(evento) {
         evento.preventDefault();
         let novoCliente = new Cliente(this._inputName.value, this._inputCPF.value, new Conta (this._inputConta.value));
         this._clientes.inserir(novoCliente);
@@ -26,7 +23,7 @@ class ClienteController {
             }
         );
     }
-    inserirClienteNoHTML(cliente: Cliente) {
+    inserirClienteNoHTML(cliente) {
         const elementoP = document.createElement('p');
         elementoP.textContent = cliente.toString();
         const botaoApagar = document.createElement('button');
@@ -35,7 +32,7 @@ class ClienteController {
             (event) => {
                 console.log('removendo cliente ' + cliente.toString());
                 this._clientes.remover(cliente.cpf);
-                (<Element>event.target).parentElement.remove();
+                (event.target).parentElement.remove();
             }
             );
         elementoP.appendChild(botaoApagar);

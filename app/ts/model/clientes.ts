@@ -1,28 +1,24 @@
-class Clientes extends Cliente {
+class Clientes{
 
-    private clientes: Array<Cliente>;
+    private _clientes: Array<Cliente>;
 
-    constructor(nome: string, cpf: string, conta: Conta) {
-        super(nome, cpf, conta);
-        this.clientes = new Array<Cliente>(); 
+    constructor() {
+        this._clientes = new Array<Cliente>(); 
     }
     inserir(cliente: Cliente): void {
-        this.clientes.push(cliente);
+        this._clientes.push(cliente);
     }
     remover(cpf: string): void {
-        const clientepRemover = this.pesquisar(cpf);
-        if (clientepRemover) {
-            const indiceConta = this.clientes.indexOf(clientepRemover);
-            if (indiceConta > -1) {
-                this.clientes.splice(indiceConta, 1);
+            const indexCliente: number = this._clientes.findIndex(cliente => cliente.cpf == cpf);
+            if (indexCliente > -1) {
+                this._clientes.splice(indexCliente, 1);
             }
         }
-    }
+    
     pesquisar(cpf: string): Cliente {
-        return this.clientes.find(cliente => cliente.cpf === cpf);
+        return this._clientes.find(cliente => cliente.cpf === cpf);
     }
     listar(): Array<Cliente> {
-        return this.clientes;
+        return this._clientes;
     }
-
-    }
+}
